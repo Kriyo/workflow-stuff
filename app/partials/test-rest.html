@@ -1,0 +1,31 @@
+<md-content data-ng-controller="testController as test" flex="50">
+    <md-content layout="column" flex>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <div class="md-title" flex>Test Rest</div>
+            </div>
+        </md-toolbar>
+        <md-card flex>
+            <md-content layout-padding layout="row" flex>
+                <md-input-container flex="60">
+                    <label>service</label>
+                    <input ng-model="test.service">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>http-method</label>
+                    <md-select ng-model="test.httpMethod">
+                        <md-option ng-repeat="method in test.httpMethods" value="{{method.name}}">
+                            {{method.description}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex>
+                    <md-button class="md-raised md-primary" data-ng-click="test.doCall(test.service, test.httpMethod)">Do call</md-button>
+                </md-input-container>
+            </md-content>
+            <md-content layout-padding layout="row" data-ng-show="test.result" flex>
+                <pre>{{test.result|json}}</pre>
+            </md-content>
+        </md-card>
+    </md-content>
+</md-content>

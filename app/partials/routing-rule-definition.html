@@ -1,0 +1,67 @@
+<md-content layout="column" flex layout-align="center center" data-ng-cloak class="md-whiteframe-z1">
+    <md-toolbar layout="row">
+        <h1 flex layout="row" layout-align="start">&nbsp;Routing Rule Definition</h1>
+        <md-switch ng-model="appl.selected.enabled" aria-label="Enable/Disable">
+            {{ appl.selected.enabled?'Enabled':'Disabled' }}
+        </md-switch>
+    </md-toolbar>
+    <md-content layout-padding layout="row">
+        <md-input-container>
+            <label>group</label>
+            <input ng-model="appl.selected.gr">
+        </md-input-container>
+        <md-input-container>
+            <label>name</label>
+            <input ng-model="appl.selected.name">
+        </md-input-container>
+        <md-input-container>
+            <label>type</label>
+            <md-select ng-model="appl.selected.type">
+                <md-option ng-repeat="type in appl.types" value="{{type.name}}">
+                    {{type.description}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </md-content>
+    <md-content layout-padding layout="row">
+        <md-input-container>
+            <label>source</label>
+            <md-select ng-model="appl.selected.source">
+                <md-option ng-repeat="source in appl.sources" value="{{source.name}}">
+                    {{source.description}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>destination</label>
+            <md-select ng-model="appl.selected.destination">
+                <md-option ng-repeat="destination in appl.destinations" value="{{destination.name}}">
+                    {{destination.description}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </md-content>
+    <md-toolbar>
+        <h1>Rule Criteria</h1>
+    </md-toolbar>
+    <md-content layout-padding layout="column" layout-sm="column">
+        <md-input-container>
+            <label>file name</label>
+            <input ng-model="appl.selected.fileName">
+        </md-input-container>
+        <!--  <div layout="row" flex>
+                       <div flex="50" flex-md="100" layout="column">
+                           <fieldset class="standard" flex>
+                               <legend>when file available</legend>
+                               <div layout="row" layout-wrap>
+                                   <div flex="50" ng-repeat="fileOpt in appl.fileOpts">
+                                       <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+                                           {{ item }} <span ng-if="exists(item, selected)">selected</span>
+                                       </md-checkbox>
+                                   </div>
+                               </div>
+                           </fieldset>
+                       </div>
+                   </div> -->
+    </md-content>
+</md-content>

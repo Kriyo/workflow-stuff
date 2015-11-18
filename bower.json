@@ -1,0 +1,32 @@
+{
+  "name": "ghibli-wui-workflow",
+  "version": "0.0.0",
+  "homepage": "https://github.com/MauF/ghibli-wui-workflow",
+  "authors": [
+    "primeur-dublin-lab"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.4.6",
+    "angular-animate": "^1.4.6",
+    "angular-aria": "^1.4.6",
+    "angular-cron-jobs": "~1.4.1",
+    "angular-material": "^0.11.2",
+    "angular-material-data-table": "~0.8.14",
+    "angular-ui-router": "~0.2.15",
+    "angular-base64": "2.0.2",
+    "angular-local-storage": "0.1.0",
+    "angular-basicauth": "0.3.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "^1.4.6"
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app" data-ng-controller="AppController as appl">
+
+<head>
+    <title data-ng-cloak>{{appl.title}}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'> -->
+    <!-- build:css css/app.css -->
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="./bower_components/angular-material-data-table/dist/md-data-table.min.css" />
+    <link rel="stylesheet" href="./bower_components/angular-cron-jobs/dist/angular-cron-jobs.min.css">
+    </script>
+    <link rel="stylesheet" href="./assets/app.css" />
+    <!-- endbuild -->
+    <style type="text/css">
+    /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+        display: none !important;
+    }
+    </style>
+</head>
+
+<body layout="row" data-ng-cloak>
+    <!--     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+    <div ng-include="'./partials/side-nav.html'"></div>
+</md-sidenav> -->
+    <md-content flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+        <md-toolbar layout="row" class="md-whiteframe-z1" data-ng-show="appl.user">
+            <!--             <md-button class="menu" hide-gt-sm data-ng-click="appl.toggleList()" aria-label="Show Route List">
+    <md-icon md-svg-icon="menu"></md-icon>
+</md-button> -->
+            <div class="md-toolbar-tools" layout="row" layout-align="end">
+                <div class="md-title" layout="row" flex layout-align="center">{{appl.title}}</div>
+                <md-button data-ng-controller="loginController as login" class="md-accent" data-ng-click="login.onLogoutButton()">
+                    <md-tooltip md-direction="bottom">
+                        click to logout!
+                    </md-tooltip>
+                    Logged in as: {{appl.user}}
+                </md-button>
+            </div>
+        </md-toolbar>
+        <!-- <md-content flex id="content" layout="row" layout-align="center center" data-ng-show="false">
+            <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+        </md-content> -->
+        <md-content flex id="content" layout="row" layout-align="center center" ui-view style="background-color: white;">
+        </md-content>
+    </md-content>
+    <!-- build:js js/app.js -->
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="./bower_components/angular-material/angular-material.min.js"></script>
+    <script src="./bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+    <script src="./bower_components/angular-cron-jobs/dist/angular-cron-jobs.min.js"></script>
+    <script src="./bower_components/angular-basicauth/angular-basicauth.min.js"></script>
+    <script src="./bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="./bower_components/angular-base64/angular-base64.min.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="./src/app-controllers.js"></script>
+    <script src="./src/app-services.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

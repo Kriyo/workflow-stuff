@@ -1,0 +1,20 @@
+<md-toolbar class="md-whiteframe-z1">
+    <h1>Routes</h1>
+</md-toolbar>
+<!-- <pre>{{appl.groups | json}}</pre> -->
+<md-content>
+    <md-list data-ng-repeat="routeGroup in appl.groups" style="cursor: pointer;">
+        <md-toolbar class="md-accent" data-ng-click="appl.toogleMenu(routeGroup)">
+            <div flex class="md-toolbar-tools">{{routeGroup.group.name}}</div>
+        </md-toolbar>
+        <md-list-item class="md-2-line" data-ng-repeat="route in routeGroup.group.routes" style="cursor: pointer;" data-ng-show="routeGroup === appl.selectedGroup">
+            <div layout="column" class="md-list-item-text" data-ng-click="appl.selectRoute(route, routeGroup)" style="cursor: pointer;" data-ng-class="{'selected' : route === appl.selected }">
+                <span style="cursor: pointer;">name: {{route.name}}</span>
+                <label style="cursor: pointer;">enabled: {{route.enabled}}</label>
+                </md-input-container>
+            </div>
+            <md-divider inset></md-divider>
+        </md-list-item>
+        <md-divider inset></md-divider>
+    </md-list>
+</md-content>
